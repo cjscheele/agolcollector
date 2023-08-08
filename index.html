@@ -15,8 +15,9 @@
             "esri/config", 
              "esri/Map", 
              "esri/views/MapView",
-             "esri/widgets/Locate"
-        ], (esriConfig, Map, MapView, Locate) => {
+             "esri/widgets/Locate",
+             "esri/layers/FeatureLayer"
+        ], (esriConfig, Map, MapView, Locate, FeatureLayer) => {
 
             esriConfig.apiKey = "AAPK1074e52bbd8d4a7f8aac8850a186c22bxMaJNAQ4TRN94kULcaymkyRF64zjDWC-w4jRlYFPAg6toeCDU-pTio78mm89UU4z";
 
@@ -41,6 +42,13 @@
           position: "top-left"
         });
         });
+
+        // Create featurelayer from feature service
+         const layer = new FeatureLayer({
+          // URL to the service
+           url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/0" //Your item URL Goes Here
+        });
+        map.add(layer);
     </script>
 
     <style>
