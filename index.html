@@ -46,7 +46,7 @@
         // Create featurelayer from feature service
          const layer = new FeatureLayer({
           // URL to the service
-           url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer/0" //Your item URL Goes Here
+           url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/survey123_4e3d6de412b34e45844cda1be1d87b81_results/FeatureServer" //Your item URL Goes Here
         });
         map.add(layer);
     </script>
@@ -60,9 +60,28 @@
         height: 100%;
         width: 100%;
         }
+        .addRecordBtn {
+          position: absolute;
+          z-index: 10;
+          top: 10px;
+          right: 10px;
+          background-color: #0079c1;
+          color: white;
+          padding: 8px 16px;
+          border: none;
+          border-radius: 4px;
+          font-size: 14px;
+          cursor: pointer;
+          text-decoration: none;
+        }
+
+        .addRecordBtn:hover {
+          background-color: #005a87;
+        }
     </style>
   </head>
   <body>
+    <a href="https://survey123.arcgis.com/share/55a1dcb95cfe435a8b16cebfd83afef4"target="_blank" class="addRecordBtn">Add Record</a>
     <div id="viewDiv"></div>
   </body>
 </html>
