@@ -14,8 +14,9 @@
         require([ 
             "esri/config", 
              "esri/Map", 
-             "esri/views/MapView" 
-        ], (esriConfig, Map, MapView) => {
+             "esri/views/MapView",
+             "esri/widgets/Locate"
+        ], (esriConfig, Map, MapView, Locate) => {
 
             esriConfig.apiKey = "AAPK1074e52bbd8d4a7f8aac8850a186c22bxMaJNAQ4TRN94kULcaymkyRF64zjDWC-w4jRlYFPAg6toeCDU-pTio78mm89UU4z";
 
@@ -30,6 +31,15 @@
                 center: [-97.7431, 30.2672], // Longitude, latitude
                 zoom: 13, // Zoom level
             });
+
+            const locateBtn = new Locate({
+                  view: view
+                });
+
+        // Add the locate widget to the top left corner of the view
+        view.ui.add(locateBtn, {
+          position: "top-left"
+        });
         });
     </script>
 
